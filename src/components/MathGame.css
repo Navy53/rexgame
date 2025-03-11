@@ -1,0 +1,191 @@
+.math-game {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: #1a3621;
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #041207;
+  padding: 15px 40px;
+  color: white;
+  height: 80px;
+}
+
+.lives {
+  font-size: 32px;
+  color: #d1d300;
+  font-weight: bold;
+}
+
+.question {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.score {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.game-board {
+  flex: 1;
+  position: relative;
+  background-color: #1a3621;
+  overflow: hidden;
+}
+
+.grid-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #5d7853;
+  border-radius: 50%;
+}
+
+.player {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  background-color: #FFFF00;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  clip-path: polygon(50% 50%, 0 15%, 0 0, 100% 0, 100% 100%, 0 100%, 0 85%, 50% 50%);
+  animation: chomp 0.45s ease-in-out infinite alternate;
+}
+
+@keyframes chomp {
+  0% {
+    clip-path: polygon(50% 50%, 0 15%, 0 0, 100% 0, 100% 100%, 0 100%, 0 85%, 50% 50%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 0 35%, 0 0, 100% 0, 100% 100%, 0 100%, 0 65%, 50% 50%);
+  }
+}
+
+.ghost {
+  position: absolute;
+  width: 25px;
+  height: 28px;
+  border-radius: 13px 13px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+/* 添加幽灵底部的波浪效果 */
+.ghost::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: inherit;
+  clip-path: polygon(
+    0% 0%,
+    20% 100%,
+    40% 0%,
+    60% 100%,
+    80% 0%,
+    100% 100%,
+    100% 300%,
+    0% 300%
+  );
+}
+
+/* 为每种幽灵设置不同的颜色 */
+.ghost-1 {
+  background-color: #f25757; /* 红色 */
+}
+
+.ghost-2 {
+  background-color: #5f78ff; /* 蓝色 */
+}
+
+.ghost-3 {
+  background-color: #ff8c00; /* 橙色 */
+}
+
+.ghost-4 {
+  background-color: #00c853; /* 绿色 */
+}
+
+.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px 40px;
+  border-radius: 10px;
+  z-index: 20;
+  text-align: center;
+}
+
+.sub-message {
+  font-size: 18px;
+  margin-top: 15px;
+  font-weight: normal;
+}
+
+.game-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #1a3621;
+}
+
+.game-controls button {
+  width: 120px;
+  height: 120px;
+  border: none;
+  border-radius: 5px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.exit-btn {
+  background-color: #e83b3b;
+}
+
+.start-btn {
+  background-color: #ffb73b;
+}
+
+.next-btn {
+  background-color: #3b86ff;
+}
+
+.sound-btn {
+  background-color: #8e44ad;
+  width: 80px;
+  font-size: 16px;
+} 
