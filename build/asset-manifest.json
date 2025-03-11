@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/rexgame/static/css/main.9c86a3ca.css",
+    "main.js": "/rexgame/static/js/main.d91ceacc.js",
+    "static/js/453.9e7ca16c.chunk.js": "/rexgame/static/js/453.9e7ca16c.chunk.js",
+    "index.html": "/rexgame/index.html",
+    "main.9c86a3ca.css.map": "/rexgame/static/css/main.9c86a3ca.css.map",
+    "main.d91ceacc.js.map": "/rexgame/static/js/main.d91ceacc.js.map",
+    "453.9e7ca16c.chunk.js.map": "/rexgame/static/js/453.9e7ca16c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9c86a3ca.css",
+    "static/js/main.d91ceacc.js"
+  ]
+}
